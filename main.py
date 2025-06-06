@@ -2,7 +2,8 @@ import os
 import streamlit as st
 import google.generativeai as genai
 
-genai.configure(api_key="GOOGLE_API_KEY")
+api_key = os.environ.get("GOOGLE_API_KEY")
+genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.0-flash")
 
 def minhafuncao(prompt):
